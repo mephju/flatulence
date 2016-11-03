@@ -1,0 +1,17 @@
+{
+  "name": "lodash.flattenobject",
+  "version": "0.1.0",
+  "description": "Flatten objects so that each key is the full path to a primitive value",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "utility",
+    "js",
+    "paths",
+    "json"
+  ],
+  "author": "Kolja Kirchner",
+  "license": "ISC"
+}
