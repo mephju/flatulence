@@ -1,6 +1,6 @@
 {
   "name": "flatulence",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "Flatten objects and arrays so that each key is the full  path to a primitive value. Paths are lodash-compatible.",
   "main": "index.js",
   "scripts": {
