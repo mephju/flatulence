@@ -1,0 +1,86 @@
+{
+    "array":[
+        [0,1,3,4],
+        [0,1,3,4,6]
+    ],
+    "id": "900036",
+    "isNewEntity": false,
+    "active": true,
+    "cc": {
+        "requiresCvv": false,
+        "allowsUcase": true,
+        "usesFinalAuth": true,
+        "tests": [
+            {
+                "testId": "a65fa097-6212-4ed5-ada6-5c8245fa63c5",
+                "performedAt": 1478175856755,
+                "performedBy": "dem",
+                "result": true
+            },
+            {
+                "testId": "deb2bdf5-2bdd-4ea5-b274-02fd03c5b51c",
+                "performedAt": 1478175856755,
+                "performedBy": "twi",
+                "result": false
+            }
+        ],
+        "usesDcc": false,
+        "contract": {
+            "usesMultiContractSetup": true,
+            "type": "InternetSsl",
+            "monoContractSetup": {
+                "cardAcceptorId": "CAID-1072",
+                "vuNumber": "VU-1073",
+                "currencies": [
+                    "LTL",
+                    "SAR",
+                    "LKR"
+                ]
+            },
+            "multiContractSetup": [
+                {
+                    "cardAcceptorId": "CAID-1060",
+                    "vuNumber": "VU-1061",
+                    "currency": "KYD"
+                },
+                {
+                    "cardAcceptorId": "CAID-1062",
+                    "vuNumber": "VU-1063",
+                    "currency": "OMR"
+                },
+                {
+                    "cardAcceptorId": "CAID-1064",
+                    "vuNumber": "VU-1065",
+                    "currency": "TOP"
+                },
+                {
+                    "cardAcceptorId": "CAID-1066",
+                    "vuNumber": "VU-1067",
+                    "currency": "KYD"
+                },
+                {
+                    "cardAcceptorId": "CAID-1068",
+                    "vuNumber": "VU-1069",
+                    "currency": "TTD"
+                },
+                {
+                    "cardAcceptorId": "CAID-1070",
+                    "vuNumber": "VU-1071",
+                    "currency": "HRK"
+                }
+            ]
+        }
+    },
+    "defaultTxnType": "directdebit",
+    "contract": {
+        "tidNumber": "0fe6f621-19a5-4a37-9d6e-59283118e86e",
+        "floorLimit": 5000,
+        "currencies": [
+            "EUR",
+            "CHF",
+            "USD"
+        ]
+    },
+    "brandId": "visa",
+    "acquirerId": "visa DE Six"
+}

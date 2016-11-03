@@ -1,3 +1,1 @@
-const flatulence = require('./flatulence')
-
-module.exports = flatulence
+module.exports = require('./lib')
