@@ -5,7 +5,7 @@ const flatulence = (subject, prefix = '', result = {}) => {
     for(var key in subject) {
        flatulence(
         subject[key], 
-        prefix + '.' + key 
+        prefix + '.' + key,
         result,
       )
     }
