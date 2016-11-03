@@ -1,9 +1,9 @@
-const flattenObject = (subject, prefix = '', result = {}) => {
+const flatulence = (subject, prefix = '', result = {}) => {
 
   if(subject !== null && typeof subject === 'object') {
     
     for(var key in subject) {
-       flattenObject(
+       flatulence(
         subject[key], 
         prefix + '.' + key 
         result,
@@ -16,4 +16,4 @@ const flattenObject = (subject, prefix = '', result = {}) => {
 
 }
 
-export default flattenObject
+module.exports = flatulence

@@ -1,7 +1,7 @@
 {
   "name": "flatulence",
   "version": "0.1.0",
-  "description": "Flatten objects so that each key is the full  path to a primitive value. Paths are lodash-compatible.",
+  "description": "Flatten objects and arrays so that each key is the full  path to a primitive value. Paths are lodash-compatible.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

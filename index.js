@@ -1,1 +1,3 @@
-export default from './flattenObject'
+const flatulence = require('./flatulence')
+
+module.exports = flatulence
