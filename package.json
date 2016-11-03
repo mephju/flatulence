@@ -1,5 +1,5 @@
 {
-  "name": "lodash.flattenobject",
+  "name": "flatten-object",
   "version": "0.1.0",
   "description": "Flatten objects so that each key is the full path to a primitive value",
   "main": "index.js",
