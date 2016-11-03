@@ -6,7 +6,7 @@ const flatulence = (subject, prefix = '', result = {}) => {
        flatulence(
         subject[key], 
         prefix + '.' + key,
-        result,
+        result
       )
     }
     return result
