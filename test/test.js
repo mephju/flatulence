@@ -5,9 +5,9 @@ const fp     = require('lodash/fp')
 
 describe('flatulence', () => {
   
-  describe('#deflate()', () => {
+  describe('#flatten()', () => {
     it('should flatten object', () => {
-      const flattened = fl.deflate(data)
+      const flattened = fl.flatten(data)
 
       console.log(flattened)
       
@@ -16,7 +16,7 @@ describe('flatulence', () => {
 
     it('should use prefix arg if provided', () => {
       const prefix = 'this.is.my.custom.prefix'
-      const flattened = fl.deflate(
+      const flattened = fl.flatten(
         { 
           id: 'anid', 
           map: { a:1, b:2, c:3} 
@@ -31,20 +31,30 @@ describe('flatulence', () => {
     })
   })
 
-  describe('#inflate()', () => {
-    it('should reverse flattened object to an inflated one', () => {
+  describe('#unflatten()', () => {
+    it('should reverse flattened object to an unflattened one', () => {
       const flattened = fl.flatten(data)
-      const inflated = fl.unflatten(flattened)
+      const unflattened = fl.unflatten(flattened)
 
-      assert.deepEqual(data, inflated)
+      assert.deepEqual(data, unflattened)
 
     })
 
-    it('should reverse flattened object to an inflated one at a prefix', () => {
-      const flattened = fl.deflate(data)
-      const inflated = fl.inflate(flattened, 'cc')
+    it('should reverse flattened object to an unflattened one at a prefix', () => {
+      const flattened = fl.flatten(data)
+      const unflattened = fl.unflatten(flattened, 'cc')
 
-      assert.deepEqual(data.cc, inflated)
+      assert.deepEqual(data.cc, unflattened)
+
+    })
+
+    it('should produce an unflat array when prefix points at array', () => {
+      const flattened = fl.flatten(data)
+      const unflattened = fl.unflatten(flattened, 'cc.contract.multiContractSetup')
+
+      console.log('unflattened', unflattened)
+
+      assert.ok(Array.isArray(unflattened))
 
     })
   })
