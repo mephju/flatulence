@@ -33,6 +33,14 @@ describe('flatulence', () => {
 
   describe('#inflate()', () => {
     it('should reverse flattened object to an inflated one', () => {
+      const flattened = fl.flatten(data)
+      const inflated = fl.unflatten(flattened)
+
+      assert.deepEqual(data, inflated)
+
+    })
+
+    it('should reverse flattened object to an inflated one at a prefix', () => {
       const flattened = fl.deflate(data)
       const inflated = fl.inflate(flattened, 'cc')
 

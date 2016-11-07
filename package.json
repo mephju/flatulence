@@ -1,16 +1,17 @@
 {
   "name": "flatulence",
-  "version": "0.1.12",
-  "description": "Flatten objects and arrays so that each key is the full  path to a primitive value. Paths are lodash-compatible. Inflate flattened objects and make them regular JSON objects again.",
+  "version": "0.2.2",
+  "description": "Flatten objects and arrays so that each key is the full  path to a primitive value. Paths are lodash-compatible. Inflate flattened objects and make them regular JS objects again.",
   "main": "index.js",
   "scripts": {
     "test": "mocha test"
   },
   "keywords": [
     "utility",
+    "flatten", 
+    "unflatten",
     "js",
-    "paths",
-    "json"
+    "paths"
   ],
   "author": "Kolja Kirchner",
   "license": "ISC",
