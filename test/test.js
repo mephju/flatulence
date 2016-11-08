@@ -1,5 +1,5 @@
 const assert = require('assert')
-const fl     = require('../lib')
+const fl     = require('../lib/main')
 const data   = require('./data')
 const fp     = require('lodash/fp')
 
