@@ -14,6 +14,17 @@ describe('flatulence', () => {
       assert.equal(flattened['array[0][1]'], 1)
     })
 
+    it('should keep empty arrays', () => {
+      const flattened = fl.flatten({
+        "name": "Mega Group 2",
+        "loginId": "admin_mega_merchant_2",
+        "description": "again, some description here",
+        "merchantUsers": []
+      })
+
+      // assert(flattened.merchantUsers)
+    })
+
     it('should use prefix arg if provided', () => {
       const prefix = 'this.is.my.custom.prefix'
       const flattened = fl.flatten(
