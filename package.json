@@ -1,11 +1,12 @@
 {
   "name": "flatulence",
-  "version": "0.2.10",
+  "version": "0.2.12",
   "description": "Flatten objects and arrays so that each key is the full  path to a primitive value. Paths are lodash-compatible. Inflate flattened objects and make them regular JS objects again.",
   "main": "lib/main.js",
   "scripts": {
     "build": "webpack -p --out-dir lib",
-    "test": "mocha test"
+    "test": "mocha test",
+    "test:build": "npm run build && npm run test"
   },
   "maintainers": [
     {

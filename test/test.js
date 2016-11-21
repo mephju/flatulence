@@ -9,20 +9,26 @@ describe('flatulence', () => {
     it('should flatten object', () => {
       const flattened = fl.flatten(data)
 
-      console.log(flattened)
+      // console.log(flattened)
       
       assert.equal(flattened['array[0][1]'], 1)
     })
 
-    it('should keep empty arrays', () => {
-      const flattened = fl.flatten({
+    it('should keep empty arrays and objects', () => {
+      
+      const flattened = fl.flatten.keepEmpty({
         "name": "Mega Group 2",
         "loginId": "admin_mega_merchant_2",
         "description": "again, some description here",
-        "merchantUsers": []
+        "merchantUsers": [],
+        "map": {}
       })
 
-      // assert(flattened.merchantUsers)
+      console.log('flattened', flattened)
+
+      assert.ok(Array.isArray(flattened.merchantUsers))
+      assert.ok(typeof flattened.map === 'object')
+      assert.ok(!Array.isArray(flattened.map))
     })
 
     it('should use prefix arg if provided', () => {
@@ -35,7 +41,7 @@ describe('flatulence', () => {
         prefix
       )
 
-      console.log(flattened)
+      // console.log(flattened)
       
       assert.equal(flattened[prefix + '.id'], 'anid')
       assert.equal(flattened[prefix + '.map.a'], 1)
@@ -61,8 +67,10 @@ describe('flatulence', () => {
 
     it('should produce an unflat array when prefix points at array', () => {
       const flattened = fl.flatten(data)
+
       const unflattened = fl.unflatten(flattened, 'cc.contract.multiContractSetup')
 
+      console.log('flattened', flattened)
       console.log('unflattened', unflattened)
 
       assert.ok(Array.isArray(unflattened))

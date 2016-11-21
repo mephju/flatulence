@@ -1,24 +1,37 @@
 const deflate = {
   
-  deflate(subject, prefix = '', result = {}) {
+  flatten(subject, prefix = '', result = {}, keepEmptyObjects = false) {
     
     if(subject !== null && typeof subject === 'object') {
+
+      const keys = Object.keys(subject)
+
+      if(!keys.length && keepEmptyObjects) {
+        result[prefix] = subject
+        return result
+      } 
       
-      for(var key in subject) {
-        deflate.deflate(
-          subject[key], 
-          appendKey(prefix, key, Array.isArray(subject)),
-          result
-        )
-      }
+      keys.forEach(key => deflate.flatten(
+        subject[key], 
+        appendKey(prefix, key, Array.isArray(subject)),
+        result,
+        keepEmptyObjects,
+      ))
+              
       return result
     }
 
     result[removeTrailingDot(prefix)] = subject
 
     return result
-  }
+  },
 
+}
+
+deflate.flatten.keepEmpty = (subject, prefix = '', result = {}) => {
+  const keepEmptyObjects = true
+
+  return deflate.flatten(subject, prefix, result, keepEmptyObjects)
 }
 
 const last = string => string.charAt(string.length - 1)
@@ -39,4 +52,4 @@ const appendKey = (prefix, key, isArrayElement = false) => {
   
 }
 
-module.exports = deflate.deflate
+module.exports = deflate.flatten
