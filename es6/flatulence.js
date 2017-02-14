@@ -1,16 +1,16 @@
-const inflate = require('./inflate')
-const deflate = require('./deflate')
+const unflatten = require('./unflatten')
+const flatten = require('./flatten')
 
 const flatulence = {
 
   toFlatArray() { throw new Error('not implemented yet') },
 
-  deflate,
-  flatten: deflate,
+  deflate: flatten,
+  flatten,
 
-  inflate,
-  unflatten: inflate,
-  
+  inflate: unflatten,
+  unflatten,
+
 }
 
 

@@ -1,1 +1,2 @@
-require('./test')
+require('./flatten.test')
+require('./unflatten.test')
